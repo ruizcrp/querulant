@@ -18,7 +18,7 @@ attribution=[]
 
 
 
-query="Logiernächte"
+query="Logiernaechte"
 
 embeddings1 = model.encode(query, convert_to_tensor=True)
 embeddings2 = model.encode(file_one.text, convert_to_tensor=True)
@@ -35,6 +35,6 @@ print(which)
 
 
 
-attribution.append(str(file_one.title_slug[int(which)])+" ("+str(int(100*max_value))+")")
+attribution.append(str(file_one.title[int(which)])+" ("+str(int(100*max_value))+")")
 
 print(attribution)
