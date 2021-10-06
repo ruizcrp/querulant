@@ -1,3 +1,9 @@
+# eigene
+models/*
+models/sts-GBERT-de
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

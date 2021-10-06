@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Querulant</title>
+  </head>
+  <body>
+
+    <div class="message_holder"></div>
+
+    <form action="" method="POST">
+<input type="checkbox" id="ogd_check" name="ogd_check" >
+  <label for="ogd_check">Nur OGD</label>
+      <input type="text" class="message" name="nachricht" id="tags" placeholder="Query eintippen"/>
+      <input type="submit"/>
+    </form>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  </script>  
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css" /> 
+       <script>
+  $( function() {
+    var availableTags = [
+        {% for language in languages %}
+            "{{language}}",
+        {% endfor %}
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+
+  </body>
+  </html>
